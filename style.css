@@ -64,18 +64,45 @@ img {
 
 /* CSS Rodapé 1 - Fim */
 
-/* CSS Flexvbox 1 - Inicio */
+/* CSS Grid 1 - Inicio */
 
-.flex {
-    display: flex;
-    flex-wrap: wrap;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
     max-width: 800px;
     margin: 0 auto;
+    padding: 10px;
 }
 
-.flex div {
-    flex: 1 1 200px;
-    margin: 10px;
+.card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    grid-gap: 10px;
 }
 
-/* CSS Flexvbox 1 - Fim */
+.banner {
+    grid-column: 3;
+    grid-row: 2 / 5;
+}
+
+@media screen and (max-width:600px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        display: block; 
+    }
+
+    .card:nth-child(9) {
+        display: none; 
+    }
+
+    .banner {
+        display: none;
+    }
+}
+
+/* CSS Grid 1 - Fim */
